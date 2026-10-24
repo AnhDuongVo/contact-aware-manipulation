@@ -1,0 +1,19 @@
+# Main comparison: 7 sensing/representation conditions x 3 tasks x 3 seeds.
+# Identical network, optimiser and number of updates in every run.
+out: results/main
+data: data
+tasks: [insertion, press, surface]
+conditions:
+  - state
+  - state+proprio
+  - state+force
+  - state+proprio+force
+  - state+proprio+aux
+  - state+proprio+force+aux
+  - privileged-aux
+seeds: [0, 1, 2]
+collect: {episodes: {insertion: 400, press: 300, surface: 300}, seed: 0, dart_sigma: 0.15}
+train: {steps: 2000, batch_size: 128, lr: 3.0e-4}
+model: {history: 16, d_model: 64, n_layers: 2}
+eval_plan: full
+eval_expert: true

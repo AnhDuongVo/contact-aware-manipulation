@@ -1,0 +1,102 @@
+{
+ "config": {
+  "groups": [
+   "state",
+   "proprio",
+   "force"
+  ],
+  "aux": "none",
+  "history": 16,
+  "d_model": 64,
+  "n_layers": 2,
+  "n_heads": 4,
+  "dropout": 0.1,
+  "aux_k": 5,
+  "aux_weight": 0.5
+ },
+ "dims": {
+  "state": 7,
+  "proprio": 6,
+  "force": 7
+ },
+ "task": "insertion",
+ "condition": "state+proprio+force",
+ "seed": 0,
+ "n_demos": 50,
+ "n_params": 128648,
+ "steps": 2000,
+ "log": [
+  {
+   "step": 250,
+   "train_action": 0.003543140599504113,
+   "train_total": 0.003543140599504113,
+   "val_action": 0.002927663462520364,
+   "val_aux_bin_acc": 0.5170399221032133,
+   "val_aux_cls_acc": 0.22005842259006816,
+   "time": 15.01147174835205
+  },
+  {
+   "step": 500,
+   "train_action": 0.0023112811613827944,
+   "train_total": 0.0023112811613827944,
+   "val_action": 0.001969743782210961,
+   "val_aux_bin_acc": 0.49415774099318405,
+   "val_aux_cls_acc": 0.25316455696202533,
+   "time": 29.855717182159424
+  },
+  {
+   "step": 750,
+   "train_action": 0.00151494808960706,
+   "train_total": 0.00151494808960706,
+   "val_action": 0.0017541069142926692,
+   "val_aux_bin_acc": 0.49318403115871473,
+   "val_aux_cls_acc": 0.24294060370009737,
+   "time": 44.77690124511719
+  },
+  {
+   "step": 1000,
+   "train_action": 0.0008855085470713675,
+   "train_total": 0.0008855085470713675,
+   "val_action": 0.001611584898387286,
+   "val_aux_bin_acc": 0.48880233690360275,
+   "val_aux_cls_acc": 0.24050632911392406,
+   "time": 59.811434268951416
+  },
+  {
+   "step": 1250,
+   "train_action": 0.0010654432699084282,
+   "train_total": 0.0010654432699084282,
+   "val_action": 0.0015120227896438833,
+   "val_aux_bin_acc": 0.48149951314508277,
+   "val_aux_cls_acc": 0.2400194741966894,
+   "time": 74.35989832878113
+  },
+  {
+   "step": 1500,
+   "train_action": 0.0008867269498296082,
+   "train_total": 0.0008867269498296082,
+   "val_action": 0.0015226001022637485,
+   "val_aux_bin_acc": 0.4810126582278481,
+   "val_aux_cls_acc": 0.24196689386562803,
+   "time": 89.2761459350586
+  },
+  {
+   "step": 1750,
+   "train_action": 0.0008819801150821149,
+   "train_total": 0.0008819801150821149,
+   "val_action": 0.001495551546623417,
+   "val_aux_bin_acc": 0.4800389483933788,
+   "val_aux_cls_acc": 0.24294060370009737,
+   "time": 104.60459446907043
+  },
+  {
+   "step": 2000,
+   "train_action": 0.0008291912381537259,
+   "train_total": 0.0008291912381537259,
+   "val_action": 0.001502566297557622,
+   "val_aux_bin_acc": 0.48149951314508277,
+   "val_aux_cls_acc": 0.24342745861733203,
+   "time": 119.79163551330566
+  }
+ ]
+}

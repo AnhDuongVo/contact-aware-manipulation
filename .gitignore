@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+logs/
+data/
+data_full/
+data_smoke/
+results/smoke/
+results/full/
+# trained checkpoints are small but regenerable; keep CSVs, figures and videos
+results/**/model.pt

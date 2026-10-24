@@ -1,0 +1,20 @@
+# Larger run for a lab machine: 5 seeds, longer training, bigger model.
+# Expect several hours on a 32-core node with --workers 32.
+out: results/full
+data: data_full
+tasks: [insertion, press, surface]
+conditions:
+  - state
+  - state+proprio
+  - state+force
+  - state+proprio+force
+  - state+proprio+aux
+  - state+proprio+force+aux
+  - privileged-aux
+seeds: [0, 1, 2, 3, 4]
+collect: {episodes: {insertion: 800, press: 600, surface: 600}, seed: 0, dart_sigma: 0.15}
+train: {steps: 4000, batch_size: 256, lr: 3.0e-4}
+model: {history: 16, d_model: 128, n_layers: 3}
+eval_plan: full
+eval_scale: 2.0
+eval_expert: true

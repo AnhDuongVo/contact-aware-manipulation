@@ -1,0 +1,13 @@
+# Follow-up added after the main press results (not part of the original
+# protocol): does a longer history (2.4 s instead of 0.8 s) let force-aware
+# policies keep the touch point in context instead of using force magnitude
+# as a proxy for depth?
+out: results/press_memory
+data: data
+tasks: [press]
+conditions: [state, state+proprio, state+proprio+force]
+seeds: [0, 1, 2]
+collect: {episodes: {insertion: 400, press: 300, surface: 300}, seed: 0, dart_sigma: 0.15}
+train: {steps: 2000, batch_size: 128, lr: 3.0e-4}
+model: {history: 48, d_model: 64, n_layers: 2}
+eval_plan: full

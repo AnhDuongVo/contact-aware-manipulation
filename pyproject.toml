@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cambench"
+version = "0.1.0"
+description = "Contact-aware manipulation benchmark: when do force and proprioception matter for learned manipulation?"
+authors = [{ name = "Maria (Anh Duong Vo)", email = "anhduongvo.m@gmail.com" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+  "mujoco>=3.1", "numpy>=1.26", "torch>=2.2", "pandas>=2.0",
+  "matplotlib>=3.8", "pyyaml>=6.0", "imageio>=2.34", "imageio-ffmpeg>=0.4", "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["cambench*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
